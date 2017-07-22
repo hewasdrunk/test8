@@ -1,0 +1,94 @@
+/* ---------------------具体的内容设置----------------------- */
+
+ul,li{list-style: none;}
+li{display:inline-block;}
+
+
+/*-----指示性-----*/
+.si-1{
+    padding:0 0.5rem;
+    font-size: 2rem;
+}
+
+.avator-nav-1:before{ content:"方向：";
+    color:#d0d6d9;
+    font-size:1.4rem;
+    float:left;
+    padding:8px 0;
+
+}
+
+.avator-nav-1:after{  content:"";
+    clear:both;
+}
+.avator-nav-1 li a{
+    text-decoration: none;
+    color:black;
+    font-size:1.4rem;
+    display:inline-block;
+    padding:8px 20px;
+}
+.avator-nav-1 li a:hover{
+    background:#29b078;
+    color:white;
+}
+
+/*-----第二行-----*/
+
+/*-----表单-----*/
+/*.c-row-2{padding-right:-2%;}*/
+li.show{
+    /*float:left;*/
+    position:relative;
+    /*position:relative;用于待会的图片遮盖*/
+    min-width:382px;
+    margin:2% 0;
+    background:white;
+    box-shadow:0 0 2px gray;
+    border-radius:0.2rem;
+}
+
+li.show table{ border-collapse:collapse;}
+li.show table th{
+    padding:1rem 0.5rem;
+    border-bottom:1px solid #d0d6d9;
+    font-weight: normal;
+    word-wrap:break-word;
+}
+li.show table td{
+    padding:0.5rem;
+    font-size:1.2rem;
+    border:1px solid #edf1f2;
+}
+li.show table:first-child td {
+    width:50%;
+}
+/*用于小图标和文字对齐*/
+.iss{margin-top:-0.3rem;}
+
+
+
+
+
+
+
+
+/*-----cover遮盖-----*/
+
+.cover{
+    position:absolute;
+    top:0;
+    height:100%;
+    padding:1rem;
+    border-radius:0.2rem;
+    /*background:#000;filter:alpha(Opacity=50);-moz-Opacity:0.5;opacity:0.5;*/
+    background-color: rgba(0,0,0,0.76);
+    /*rgba的高级用法：（前三个代表颜色，最后一个数值取1时代表不透明）*/
+    font-size:1.5rem;
+    color:white;
+    visibility: hidden;
+
+}
+.show:hover .cover{
+    visibility: visible;
+}

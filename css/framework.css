@@ -1,0 +1,171 @@
+
+/* ---------------------框架设置----------------------- */
+/*将html 和 body 元素的高度设置为100%，使其充满整个屏幕。*/
+/*这里还要说明一下：html下的body一般会有或多或少的margin，body的高度不是100%的。*/
+html{height:100%;width:100%;}
+
+/*将html 和 body 元素的高度设置为100%，使其充满整个屏幕。这里body：height：100%是继承html的高度*/
+/*将 body 的 display 属性设置为 flex, 然后将方向属性设置为列,*/
+body{display:flex;flex-direction:column;height:100%;width:100%;}
+/*我们希望 header 和footer 只占用他们应该占用的空间，将剩余的空间全部交给主体内容区域*/
+
+/*.g-header{flex:0 0 auto;}*/
+header{flex:0 0 auto;}
+/*将 flex-grow 设置为1，该元素会占用全部可使用空间*/
+/*而其他元素该属性值为0，因此不会得到多余的空间*/
+/* 1 flex-grow, 0 flex-shrink, auto flex-basis */
+.g-content{flex: 1 0 auto;width:100%;background:whitesmoke;}
+
+/*.g-footer{flex: 0 0 auto;}*/
+footer{flex: 0 0 auto;}
+
+/*此方法通过position固定在浏览器下方，但是以一种浮动在上层的效果出现的。*/
+/*所以上一个紧挨的并列盒子，即g-content盒子的内容就会有一部分显示不全。被遮挡了。*/
+/*而这种特性也被用于实现footer底层样式透明，footer里的按钮不透明。*/
+/*而实现内容不遮挡，只要在g-content的底部新增一个含高度的空div就完成。*/
+.g-footer-f{position: fixed;bottom:0; width:100%;min-height: 5rem;}
+
+/*只要再给一个层，然后给个跟父盒子一样高的高度就可以实现底层透明，上层不透明*/
+/*filter:alpha(Opacity=50);-moz-Opacity:0.5;opacity:0.5;实现透明效果*/
+.footer-bg{height:5rem;filter:alpha(Opacity=50);-moz-Opacity:0.5;opacity:0.5;}
+
+
+/* ---------------------具体的头部设置----------------------- */
+
+.h-row-1{
+    min-height: 2rem;
+    line-height: 2rem;
+}
+.h-row-1 a{
+    color:#20B176;
+}
+.h-row-1 img{
+    max-width: 1rem;
+    margin:0 0.2rem;
+}
+
+.h-row-2{
+    background:#20B176;
+    min-height:4rem;
+    line-height:4rem;
+}
+.h-row-2 a{
+    font-size:1.5rem;
+    color:#fff;
+    margin-left: 2.5rem;
+}
+
+/* ---------------------具体的脚步设置----------------------- */
+
+footer{
+    background:#20B176;
+}
+.f-row-2{
+    min-height: 2rem;
+    line-height: 2rem;
+    border-top:0.1rem solid #fff;
+}
+.f-row-2 span{
+    padding:0 0.2rem;
+    font-size:1rem;
+    color:#fff;
+}
+.f-row-2 span:nth-child(5){
+    padding-right:0.5rem;
+    border-right:0.1rem solid #fff;
+}
+
+.f-row-1{
+    padding:1rem 0;
+    min-height: 11rem;
+}
+
+.f-row-1 h5{
+    font-size: 1.5rem;
+    color:#fff;
+}
+.f-row-1 a{
+    padding:0 1rem;
+    color:#fff;
+}
+
+.f-row-1 li{
+    display:inline-block;
+}
+
+
+
+
+
+
+
+
+.f-cess-1,.f-cess-2,.f-cess-3{
+    position:relative;
+    margin:0;
+    /*border:0.1rem solid #ff0000;*/
+}
+.f-cess-1{
+    width:30%;
+    padding-bottom:1rem;
+}
+.f-cess-2{
+    width:35%;
+    margin:0 1rem;
+    padding-bottom:1rem;
+}
+.f-cess-3{
+    width:30%;
+    text-align:right;
+    overflow: hidden;
+
+}
+.f-cess-1 ul{
+    position: absolute;
+    bottom:-1rem;
+    left:0;
+    /*border:0.1rem solid #ff0000;*/
+}
+.f-cess-2 ul{
+    position: absolute;
+    bottom:-1rem;
+    left:0;
+}
+.f-cess-1 li{
+    margin:1rem .5rem 0 -1rem;
+    /*用于撑开链接的行高和去掉默认的左边10px间隙*/
+}
+.f-cess-2 li{
+    margin:1rem 1rem 0 -1rem;
+}
+.f-cess-1 li:first-child{
+    border-right:0.1rem solid #fff;
+}
+.f-cess-1 li:nth-child(2){
+    border-right:0.1rem solid #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
